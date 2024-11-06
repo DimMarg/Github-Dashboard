@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Zen+Old+Mincho:wght@500&display=swap');
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #1f232826;
+}
+
+.repo-language-color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+  background-color: #4F5D95;
+  border-radius: 50%;
+}
+
+.data-list {
+  list-style-type: none;
+  
+  .data-list-item {
+      padding: 24px 0;
+      border-bottom: 1px solid $border-color;
+  }
+}
+
+.search-form {
+  position: relative;
+  .search-field {
+    background: transparent;
+    padding: 9px;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    font-size: 14px;
+    color: $primary-color;
+  }
+  .search-button {
+    background: transparent;
+    border: 0;
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    cursor: pointer;
+  }
+}

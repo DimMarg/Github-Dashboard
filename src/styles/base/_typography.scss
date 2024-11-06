@@ -1,0 +1,18 @@
+body {
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	color: $font-color;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $primary-color;
+	margin: 0 0 12px;
+	font-weight: 600;
+}
+
+p {
+	margin: 0 0 12px;
+}
+  
