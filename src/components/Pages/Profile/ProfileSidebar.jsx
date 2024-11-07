@@ -1,12 +1,5 @@
-import { useParams } from "react-router-dom";
-import useGithubData from "../../../hooks/useGithubData";
-
-const ProfileSidebar = () => {
-    const { username } = useParams();
-    const { data, error, isLoading, isError } = useGithubData(`${username}`, {enabled: !!username});
-    
-    if (isLoading) return <div>Loading...</div>;
-    if (isError) return <div>Error: {error.message}</div>;
+import PropTypes from 'prop-types';
+const ProfileSidebar = ({data}) => {
     
     return (
         <div key={data?.id} className="col user-info">
@@ -42,5 +35,9 @@ const ProfileSidebar = () => {
         </div>
     )
 }
+
+ProfileSidebar.propTypes = {
+    data: PropTypes.any
+};
 
 export default ProfileSidebar;

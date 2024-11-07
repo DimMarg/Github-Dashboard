@@ -1,11 +1,12 @@
 import useGithubData from "../../../hooks/useGithubData";
 import { useParams } from 'react-router-dom';
+import NotFoundPage from "../NotFound/NotFoundPage";
 
 const FollowersPage = () => {
     const { username } = useParams();
-    const { data, error, isLoading, isError } = useGithubData(`${username}/followers`);
+    const { data, isLoading, isError } = useGithubData(`${username}/followers`);
     if (isLoading) return <div>Loading...</div>;
-    if (isError) return <div>Error: {error.message}</div>;
+    if (isError) return <NotFoundPage />;
     
     const totalFollowers = data ? data.length : 0;
     const textFollowers = (data && data.length > 1 ? 'Followers' : 'Follower');

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import useGithubData from "../../../hooks/useGithubData";
 import { useParams } from "react-router-dom";
+import NotFoundPage from "../NotFound/NotFoundPage";
 
 const RepositoriesPage = () => {
     const { username } = useParams();
-    const { data, error, isLoading, isError } = useGithubData(`${username}/repos`);
+    const { data, isLoading, isError } = useGithubData(`${username}/repos`);
     
     const [sortedData, setSortedData] = useState([]);
     const [sortOrder, setSortOrder] = useState('asc');
@@ -21,7 +22,7 @@ const RepositoriesPage = () => {
     }, [data, sortOrder]);
     
     if (isLoading) return <div>Loading...</div>;
-    if (isError) return <div>Error: {error.message}</div>;
+    if (isError) return <NotFoundPage />;
     
     return (
         <div className="repositories">
